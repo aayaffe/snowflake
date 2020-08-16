@@ -50,10 +50,11 @@ const emptyState = (): SnowflakeAppState => {
     name: '',
     title: '',
     milestoneByTrack: {
-      'MOBILE': 0,
+      'DEV_INFRASTRUCTURE': 0,
       'WEB_CLIENT': 0,
       'FOUNDATIONS': 0,
       'SERVERS': 0,
+      'LEGACY': 0,
       'PROJECT_MANAGEMENT': 0,
       'COMMUNICATION': 0,
       'CRAFT': 0,
@@ -63,37 +64,36 @@ const emptyState = (): SnowflakeAppState => {
       'WELLBEING': 0,
       'ACCOMPLISHMENT': 0,
       'MENTORSHIP': 0,
-      'EVANGELISM': 0,
-      'RECRUITING': 0,
+      'PROMOTING_RECRUITING': 0,
       'COMMUNITY': 0
     },
-    focusedTrackId: 'MOBILE'
+    focusedTrackId: 'WELLBEING'
   }
 }
 
 const defaultState = (): SnowflakeAppState => {
   return {
-    name: 'Cersei Lannister',
-    title: 'Staff Engineer',
+    name: 'Kishkashta',
+    title: 'Director of Engineering',
     milestoneByTrack: {
-      'MOBILE': 1,
+      'DEV_INFRASTRUCTURE': 1,
       'WEB_CLIENT': 2,
       'FOUNDATIONS': 3,
       'SERVERS': 2,
+      'LEGACY': 0,
       'PROJECT_MANAGEMENT': 4,
       'COMMUNICATION': 1,
       'CRAFT': 1,
       'INITIATIVE': 4,
-      'CAREER_DEVELOPMENT': 3,
-      'ORG_DESIGN': 2,
-      'WELLBEING': 0,
+      'CAREER_DEVELOPMENT': 5,
+      'ORG_DESIGN': 4,
+      'WELLBEING': 3,
       'ACCOMPLISHMENT': 4,
-      'MENTORSHIP': 2,
-      'EVANGELISM': 2,
-      'RECRUITING': 3,
+      'MENTORSHIP': 3,
+      'PROMOTING_RECRUITING': 2,
       'COMMUNITY': 0
     },
-    focusedTrackId: 'MOBILE'
+    focusedTrackId: 'CAREER_DEVELOPMENT'
   }
 }
 

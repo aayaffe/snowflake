@@ -1,17 +1,18 @@
 // @flow
 import * as d3 from 'd3'
 
-export type TrackId = 'MOBILE' | 'WEB_CLIENT' | 'FOUNDATIONS' | 'SERVERS' |
+export type TrackId = 'DEV_INFRASTRUCTURE' | 'WEB_CLIENT' | 'FOUNDATIONS' | 'SERVERS' | 'LEGACY' |
   'PROJECT_MANAGEMENT' | 'COMMUNICATION' | 'CRAFT' | 'INITIATIVE' |
   'CAREER_DEVELOPMENT' | 'ORG_DESIGN' | 'WELLBEING' | 'ACCOMPLISHMENT' |
-  'MENTORSHIP' | 'EVANGELISM' | 'RECRUITING' | 'COMMUNITY'
+  'MENTORSHIP' | 'PROMOTING_RECRUITING' | 'COMMUNITY'
 export type Milestone = 0 | 1 | 2 | 3 | 4 | 5
 
 export type MilestoneMap = {
-  'MOBILE': Milestone,
+  'DEV_INFRASTRUCTURE': Milestone,
   'WEB_CLIENT': Milestone,
   'FOUNDATIONS': Milestone,
   'SERVERS': Milestone,
+  'LEGACY': Milestone,
   'PROJECT_MANAGEMENT': Milestone,
   'COMMUNICATION': Milestone,
   'CRAFT': Milestone,
@@ -21,8 +22,7 @@ export type MilestoneMap = {
   'WELLBEING': Milestone,
   'ACCOMPLISHMENT': Milestone,
   'MENTORSHIP': Milestone,
-  'EVANGELISM': Milestone,
-  'RECRUITING': Milestone,
+  'PROMOTING_RECRUITING': Milestone,
   'COMMUNITY': Milestone
 }
 export const milestones = [0, 1, 2, 3, 4, 5]
@@ -71,10 +71,11 @@ export type Track = {
 }
 
 type Tracks = {|
-  'MOBILE': Track,
+  'DEV_INFRASTRUCTURE': Track,
   'WEB_CLIENT': Track,
   'FOUNDATIONS': Track,
   'SERVERS': Track,
+  'LEGACY': Track,
   'PROJECT_MANAGEMENT': Track,
   'COMMUNICATION': Track,
   'CRAFT': Track,
@@ -84,94 +85,89 @@ type Tracks = {|
   'WELLBEING': Track,
   'ACCOMPLISHMENT': Track,
   'MENTORSHIP': Track,
-  'EVANGELISM': Track,
-  'RECRUITING': Track,
+  'PROMOTING_RECRUITING': Track,
   'COMMUNITY': Track
 |}
 
 export const tracks: Tracks = {
-  "MOBILE": {
-    "displayName": "Mobile",
+  "DEV_INFRASTRUCTURE": {
+    "displayName": "Dev infrastructure - DONE",
     "category": "A",
-    "description": "Develops expertise in native mobile platform engineering, such as iOS or Android",
+    "description": "Develop expertise in the use and fundamentals of the development infrastructure",
     "milestones": [{
-      "summary": "Works effectively within established iOS or Android architectures, following current best practices",
+      "summary": "Works effectively within established methodolgies using the available infrastructure",
       "signals": [
-        "Delivers features requiring simple local modifications",
-        "Adds simple actions that call server endpoints",
-        "Reuses existing components appropriately",
+        "Writes thorough postmortems for service outages",
+        "Uses proper development methodologies as part of the development process",
+        "Properly implements work flow instructions (such as proper workitem editing)",
       ],
       "examples": [
-        "Added existing button to a different iOS surface",
-        "Add follow button for publications on Android",
-        "Fetched and displayed a new stream, using existing stream item styles",
+        "Made safe and effective configuration changes",
+        "Resolves simple git, TFS and pipeline erros idependently",
+        "Familiar with the organization standars, and applies them correctly",
       ],
     }, {
-      "summary": "Develops new instances of existing architecture, or minor improvements to existing architecture",
+      "summary": "Develops new features based on existing services, or minor improvements to existing platforms",
       "signals": [
-        "Defines new useful and appropriate proto-generated objects",
-        "Creates simple new activities on Android",
-        "Migrates code from old patterns to new patterns",
+        "Creates new service pipelines based on existing ones",
+        "Solves complex Jenkins and TFS pipeline issues",
       ],
       "examples": [
-        "Upgraded SDWebImage to a new major version",
-        "Added support for rendering a new type of stream item",
-        "Prototyped a simple new feature quickly",
+        "Solves complex build issues",
+        "Improved the build script",
+        "Has the ability to classify issues, and look up solutions idependently",
       ],
     }, {
-      "summary": "Designs major new features and demonstrates a nuanced understanding of mobile platform constraints",
+      "summary": "Designs major new features and demonstrates a nuanced understanding of devops processes",
       "signals": [
-        "Implements complex features with a large product surface area",
-        "Works effectively with  Android reactive programming framework",
-        "Adds support for new iOS features after a major iOS version upgrade",
+        "Implement new build integrations",
+        "Works with other teams' engineers to implement a new devops procedure",
+        "Writes complex automations to handle repeated work",
       ],
       "examples": [
-        "Designed iOS caching strategy for offline reading",
-        "Built series reader on Android",
-        "Informed the team about recent best practice changes and deprecations",
+        "Writes major new scripts or tools to support the development process",
       ],
     }, {
-      "summary": "Builds complex, reusable architectures that pioneer best practices and enable engineers to work more effectively",
+      "summary": "Builds complex, reusable services that pioneer best practices and enable engineers to work more effectively",
       "signals": [
-        "Pioneers architecture migration strategies that reduce programmer burden",
-        "Fixes subtle memory management issues",
-        "Implements interactive dismissals that bring delight",
+        "Implements a brand new process to improve velocity and quality of work",
+        "Demonstrates deep knowledge of foundational systems",
+        "Makes appropriate buy vs build choices",
       ],
       "examples": [
-        "Upgraded CocoaPods to a new major version",
-        "Designed architecture for fetching and rendering stream items",
-        "Migrated Android persistance layer to reactive programming",
+        "Writes a detailed review, considering standards, efficiency and simplicity",
+        "Promotes significant new processes and tools to make dev better",
+        "Able to point to future issues that might arise from selected architectural decisions and suggest modifications",
       ],
     }, {
-      "summary": "Is an industry-leading expert in mobile engineering or sets strategic mobile direction for an eng team",
+      "summary": "Is an industry-leading expert in devops technologies or sets strategic devops direction for an eng team",
       "signals": [
-        "Defines long-term goals and ensures active projects are in service of them",
-        "Designs and builds innovative, industry-leading UI interactions",
-        "Invents new techniques to responsibly stretch limits of the Android platform",
+        "Invents new techniques for monitoring services health",
+        "Makes decisions that have positive, long term, wide ranging consequences",
+        "Identifies and solves systemic problems with current architecture",
       ],
       "examples": [
-        "Defined and drove complete migration plan to Swift or Kotlin",
-        "Implemented Android recycler views before platform support existed",
-        "Pioneered application-level abstractions for multi-app environment",
+        "Reads articles and compares methods & technologies, to integrate the most suitable",
+        "Has deep understanding of dev processes, adjusts infrastructures to meet the developers needs and improve procesess",
+        "Translates architectural needs into a list of tasks, and prioritizes the tasks with long term consequences in mind",
       ],
     }],
   },
 
   "WEB_CLIENT": {
-    "displayName": "Web client",
+    "displayName": "Web client - DONE",
     "category": "A",
-    "description": "Develops expertise in web client technologies, such as HTML, CSS, and JavaScript",
+    "description": "Develops expertise in web client technologies, such as Angular, Cesuim.",
     "milestones": [{
       "summary": "Works effectively within established web client architectures, following current best practices",
       "signals": [
-        "Makes minor modifications to existing screens",
-        "Fixes simple design quality issues",
+        "Makes minor modifications to existing forms or components",
+        "Minor style changes (colors, fonts, positioning)",
         "Uses CSS appropriately, following style guide",
       ],
       "examples": [
-        "Implemented sticky footer on the post page",
-        "Hooked up the action to dismiss a post from a stream",
-        "Built PaymentHistory screen using ResponseScreen",
+        "Fixed minor bug on exisiting form",
+        "Familiar with current web artchitecture, best pracitces and standards",
       ],
     }, {
       "summary": "Develops new instances of existing architecture, or minor improvements to existing architecture",
@@ -181,9 +177,8 @@ export const tracks: Tracks = {
         "Prototypes simple new features quickly",
       ],
       "examples": [
-        "Built credit card input component",
-        "Created shared buttons template",
-        "Built modal system",
+        "Fixed minor bug on DS distribution",
+        "Created shared components and Implement them across the web",
       ],
     }, {
       "summary": "Designs major new features and demonstrates a nuanced understanding of browser constraints",
@@ -193,9 +188,9 @@ export const tracks: Tracks = {
         "Acts a caretaker for all of web client code",
       ],
       "examples": [
-        "Designed font loading strategy for Medium",
-        "Researched utility of service workers for Medium",
-        "Designed and implemented ResponseScreen",
+        "Designed and implemented complex features in distribution web wroker or forms infrastructure",
+        "Researched utility of service workers ",
+        "Takes meaningfull role in design decisions and code reviews",
       ],
     }, {
       "summary": "Builds complex, reusable architectures that pioneer best practices and enable engineers to work more effectively",
@@ -205,9 +200,7 @@ export const tracks: Tracks = {
         "Makes architectural decisions that eliminate entire classes of bugs",
       ],
       "examples": [
-        "Designed Medium's post morpher and delta system",
-        "Implemented Medium's scrolling text over image blur",
-        "Designed and pioneered proto-based model storage",
+        "Defined and drove migration strategy to NeWeb",
       ],
     }, {
       "summary": "Is an industry-leading expert in web client or sets strategic web client direction for an eng team",
@@ -218,39 +211,34 @@ export const tracks: Tracks = {
       ],
       "examples": [
         "Invented CSS in JS",
-        "Defined and drove migration strategy to Lite",
-        "Implemented unidirectional data flow to completion",
+        "Defined and drove migration strategy to NeWeb",
       ],
     }],
   },
 
   "FOUNDATIONS": {
-    "displayName": "Foundations",
+    "displayName": "Foundations - DONE",
     "category": "A",
-    "description": "Develops expertise in foundational systems, such as deployments, pipelines, databases and machine learning",
+    "description": "Develops expertise in foundational systems, such as deployments, databases and machine learning",
     "milestones": [{
       "summary": "Works effectively within established structures, following current best practices",
       "signals": [
         "Writes thorough postmortems for service outages",
         "Makes simple configuration changes to services",
-        "Performs backfills safely and effectively, without causing pages",
+        "Resolved out of disk errors independently",
       ],
       "examples": [
-        "Made safe and effective Ansible changes",
-        "Implemented new ETL pipelines based on existing ones",
-        "Resolved out of disk errors independently",
+        
       ],
     }, {
       "summary": "Develops new instances of existing architecture, or minor improvements to existing architecture",
       "signals": [
-        "Made minor version upgrades to technologies",
+        "Built custom packages for DEBs, RPMs",
         "Builds machine learning jobs within the ML framework",
         "Triages service issues correctly and independently",
       ],
       "examples": [
-        "Upgraded NodeJS from 8.0 to 8.1.1",
-        "Built custom packages for RPMs",
-        "Improved ETL efficiency by improving Dynamo to S3 loading",
+        
       ],
     }, {
       "summary": "Designs standalone systems of moderate complexity, or major new features in existing systems",
@@ -261,7 +249,7 @@ export const tracks: Tracks = {
       ],
       "examples": [
         "Designed Ansible configuration management",
-        "Built Medium's realtime stats pipeline",
+        "Made minor version upgrades to technologies",
         "Designed flexible framework for writing machine learning jobs",
       ],
     }, {
@@ -272,9 +260,7 @@ export const tracks: Tracks = {
         "Introduces new databases and technologies to meet underserved needs",
       ],
       "examples": [
-        "Designed and built BBFD",
-        "Designed AWS configuration management",
-        "Introduced Kinesis and pioneered streaming events pipeline",
+        "Introduced RabbitMQ and pioneered streaming events pipeline",
       ],
     }, {
       "summary": "Is an industry-leading expert in foundational engineering or sets strategic foundational direction for an eng team",
@@ -285,63 +271,61 @@ export const tracks: Tracks = {
       ],
       "examples": [
         "Invented a novel ML technique that advanced the state of the art",
-        "Defined and developed Medium's continuous delivery strategy",
+        "Defined and developed the organizations continuous delivery strategy",
         "Developed and implemented HA strategy",
       ],
     }],
   },
 
   "SERVERS": {
-    "displayName": "Servers",
+    "displayName": "Servers - DONE",
     "category": "A",
-    "description": "Develops expertise in server side engineering, using technologies such as Go, NodeJS, or Scala",
+    "description": "Develops expertise in server side engineering, using technologies such as Java, Cpp, Python",
     "milestones": [{
       "summary": "Works effectively within established server side frameworks, following current best practices",
       "signals": [
-        "Adds NodeJS endpoints using layers architecture",
-        "Adds golang endpoints using Gotham architecture",
+        "Makes minor changes in the server",
         "Makes minor server changes to support client needs",
+        "Familiar with comm-channel architecture, best practices and standards",
       ],
       "examples": [
-        "Added IFTTT trigger for new bookmark to medium2",
-        "Added delete audio route to Buggle",
-        "Queried a Dynamo LSI appropriately",
+        "Fixed minor bug in agents",
+        "Added a new endpoint to an existing swagger rest api (i.e windData)",
       ],
     }, {
       "summary": "Develops new instances of existing architecture, or minor improvements to existing architecture",
       "signals": [
         "Assesses correctness and utility of existing code and avoids blind copy-pasting",
         "Generalizes code when appropriate",
-        "Determines data needs from product requirements",
+        "Determines design from product requirements",
       ],
       "examples": [
-        "Identified need for new index on Dynamo",
-        "Acted as caretaker for routes protos",
-        "Updated Facebook API version and codebase dependencies",
+        "Identified wrong conversion of coordinates and fixed it",
+        "Created base external agent which containts all the common logic",
+        "Wrote design document for target distirbution service",
       ],
     }, {
       "summary": "Designs standalone systems of moderate complexity, or major new features in existing systems",
       "signals": [
-        "Acts as primary maintainer for existing critical systems",
+        "Acts as primary maintainer for a chapter",
         "Integrates third party services effectively",
-        "Writes playbooks for new service maintenance",
+        "Designed and implemented a moderatly complex server side service",
       ],
       "examples": [
-        "Implemented Google Auth login to Medium",
-        "Implemented payments integration with Stripe",
-        "Built Textshots server",
+        "Takes meaningfull role in design decisions and code reviews for the specific chapter",
+        "Added rabbitMQ to engine",
+        "Designed consistent view writer service",
       ],
     }, {
       "summary": "Builds complex, reusable architectures that pioneer best practices for other engineers, or multi-system services",
       "signals": [
-        "Delivers complex systems that achieve their goals",
-        "Avoids subtle architectural mistakes when considering new systems",
-        "Makes appropriate buy vs build choices",
+        "Delivers complex services that achieve their goals",
+        "Avoids subtle architectural mistakes when considering new services",
+        "Makes architectural decisions that eliminate entire classes of bugs",
       ],
       "examples": [
-        "Designed Medium's ranked feed architecture",
-        "Designed custom domains architecture",
-        "Created Gotham framework for creating Go services",
+        "Designed the engine",
+        "Merging ERW to engine/creating CVW to eliminate race conditions",
       ],
     }, {
       "summary": "Is an industry-leading expert in server side engineering or sets strategic server side direction for an eng team",
@@ -351,9 +335,69 @@ export const tracks: Tracks = {
         "Identifies and solves systemic problems with current architecture",
       ],
       "examples": [
-        "Researched, vetted, and selected Go as Medium's statically typed language",
-        "Defined microservices architecture and medium2 migration plan",
-        "Defined and implemented proprietary IP core to the company's success",
+        "Designed the architecture of Z7",
+        "Defined microservices architecture and Z7 migration plan",
+      ],
+    }],
+  },
+
+  "Legacy": {
+    "displayName": "Legacy - DONE",
+    "category": "A",
+    "description": "יודע לעבוד עם מערכות ה-Legacy, לתחקר ולתקן באגים, לפתח פיצ'רים חדשים",
+    "milestones": [{
+      "summary": "היכרות בסיסית עם הארכיטקטורה של מערכות ה-Legacy ויכולת לתחקר באגים",
+      "signals": [
+        "מכירה את ארכיטקטורת המערכת ואת מסלול זרימת המידע בה ויודע איזה תהליכים רצים בכל סוג של עמדה (ראשית/משנית)",
+        "יודעת לתקן באגים קטנים",
+        "יודע להתקין עמדת Legacy",
+      ],
+      "examples": [
+        "מצליח לעקוב אחר הודעות בין תהליכים לצורך תחקור באג",
+        "תיקון nullptr expcetion בהדפסת הודעה",
+        "יודע לתחקר לוגים",
+      ],
+    }, {
+      "summary": "מתקן באגים במערכת ומוסיף פיצ'רים פשוטים חדשים",
+      "signals": [
+        "תיקון באגים במערכת",
+        "הכרת אזור אחריות במערכת ברמה טובה",
+      ],
+      "examples": [
+        "פתרון בעיית קריסות Logic",
+        "כתיבת ממשק חדש",
+        "מכיר את מבנה הממשקים",
+      ],
+    }, {
+      "summary": "Fixes major issues, and adds new features",
+      "signals": [
+        "הכרת תחום אחריות ברמה גבוהה מאוד, וידע מספק בשאר האזורים במערכת",
+        "יכולת לשחזר ולפתור באגים מורכבים",
+      ],
+      "examples": [
+        "תיקן באג בסביבת הלקוח",
+        "יודעת לחבר hd לעמדה ראשית המערך",
+        "הוספת יכולות למערכת",
+      ],
+    }, {
+      "summary": "Extensive knowledge in Legacy Architecture with the ability to solve long standing issues",
+      "signals": [
+        "יודע לבצע החלפת שעון קיץ/חורף",
+        "יודע לסגור גרסה חדשה ולהפיצה",
+      ],
+      "examples": [
+        "פתרון תקלות מהותיות אשר נותרו ללא מענה זמן רב",
+        "יודע לפרוס גרסה חדשה במערך",
+        "מכירה את תשתית ממשקים ויודעת לתקן שם דברים, בנוסף להכרות עם DB ולוג'יק ברמה מספקת לפתרון באגים",
+      ],
+    }, {
+      "summary": "מוקד ידע במערכת ה-Legacy",
+      "signals": [
+        "הוספת יכולות מתקדמות למערכות הקיימות",
+      ],
+      "examples": [
+        "התאמת אימג' legacy לחומרה מתקדמת יותר",
+        "פיתח בודל חדש",
       ],
     }],
   },
@@ -961,8 +1005,8 @@ export const tracks: Tracks = {
     }],
   },
 
-  "EVANGELISM": {
-    "displayName": "Evangelism",
+  "PROMOTING_RECRUITING": {
+    "displayName": "Promoting and Recruiting",
     "category": "D",
     "description": "Promotes Medium to the outside world and establishes it as an attractive and thoughtful place to work",
     "milestones": [{
@@ -1024,73 +1068,6 @@ export const tracks: Tracks = {
         "Published or interviewed in a mainstream newspaper or website outside tech",
         "Keynoted a conference with international attention",
         "Represented Medium in national televised media",
-      ],
-    }],
-  },
-
-  "RECRUITING": {
-    "displayName": "Recruiting",
-    "category": "D",
-    "description": "Strengthens Medium's team by bringing in excellent staff members",
-    "milestones": [{
-      "summary": "Brings new candidates into the pipeline and understands how to evaluate candidates at Medium",
-      "signals": [
-        "Reviews existing network for hiring leads regularly",
-        "Shadows interviews to gain familiarity with process",
-        "Reviews current job postings regularly",
-      ],
-      "examples": [
-        "Completed interview calibration",
-        "Set up casual sessions to practice asking questions",
-        "Referred appropriate individuals for open positions",
-      ],
-    }, {
-      "summary": "Interviews regularly, helps the team make meaningful hiring decisions, and helps build a diverse pipeline",
-      "signals": [
-        "Uses interview rubric to provide clear, objective feedback on candidates",
-        "Interviews candidates with empathy and treats them all with equal respect",
-        "Researches approaches for sourcing candidates and diversifying hiring",
-      ],
-      "examples": [
-        "Added observable evidence for every rating",
-        "Started a monthly brunch for candidates to meet Medium employees",
-        "Tested a new service for quality and diversity of candidates",
-      ],
-    }, {
-      "summary": "Maintains and strengthens the integrity of the current process, and regularly brings in great candidates",
-      "signals": [
-        "Teaches new interviewers how to interview with empathy",
-        "Models great interview technique and feedback when shadowed",
-        "Reverse shadows trainees and helps calibrate their feedback",
-      ],
-      "examples": [
-        "Wrote new interview question which meets our question quality criteria",
-        "Brought candidates into our pipeline proactively, with a high conversion rate",
-        "Proposed useful, tangible improvements to the interview process",
-      ],
-    }, {
-      "summary": "Actively contributes to and leads hiring decisions, and goes to great lengths to source great candidates",
-      "signals": [
-        "Documents subtle cues in interviews that indicate values alignment",
-        "Makes hiring decisions, resolving discrepancies between conflicting reports",
-        "Top-grades candidates and teases out character traits",
-      ],
-      "examples": [
-        "Planned engineering summit on interview process and training",
-        "Organized and lead Medium's presence at a recruitment fair",
-        "Started CODE2040 internship program",
-      ],
-    }, {
-      "summary": "Sets recruitment strategy, invests in long-term relationships for critical roles, and recruits at scale",
-      "signals": [
-        "Sets the tone, policy and goals around building a diverse, high-quality team",
-        "Identifies and brings in promising acquisitions",
-        "Tracks industry activity, identifying opportunities for critical roles",
-      ],
-      "examples": [
-        "Talked with a senior candidate over many months to fill a critical role",
-        "Organized efforts around convincing acquired engineers to join and stay",
-        "Set goals, then tracked and reported metrics on team demographics over time",
       ],
     }],
   },

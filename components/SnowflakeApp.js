@@ -127,6 +127,7 @@ class SnowflakeApp extends React.Component<Props, SnowflakeAppState> {
 
   render() {
     return (
+
       <main>
         <style jsx global>{`
           body {

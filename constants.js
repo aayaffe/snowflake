@@ -1073,7 +1073,7 @@ export const tracks: Tracks = {
     }, {
       "summary": "Contributes to improving team relatedness, and helps build a culture of lending support",
       "signals": [
-        "Takes on additional Shifts shifts at short notice",
+        "Takes on additional shifts at short notice",
         "Pitches in to help other teams hit deadlines, without missing own deadlines",
         "Uses position to raise difficult issues on someone's behalf",
       ],

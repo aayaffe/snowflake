@@ -72,22 +72,22 @@ export type Track = {
 
 type Tracks = {|
   'DEV_INFRASTRUCTURE': Track,
-  'WEB_CLIENT': Track,
-  'FOUNDATIONS': Track,
-  'SERVERS': Track,
-  'LEGACY': Track,
-  'PROJECT_MANAGEMENT': Track,
-  'COMMUNICATION': Track,
-  'CRAFT': Track,
-  'INITIATIVE': Track,
-  'CAREER_DEVELOPMENT': Track,
-  'ORG_DESIGN': Track,
-  'WELLBEING': Track,
-  'ACCOMPLISHMENT': Track,
-  'MENTORSHIP': Track,
-  'PROMOTING_RECRUITING': Track,
-  'COMMUNITY': Track
-|}
+    'WEB_CLIENT': Track,
+      'FOUNDATIONS': Track,
+        'SERVERS': Track,
+          'LEGACY': Track,
+            'PROJECT_MANAGEMENT': Track,
+              'COMMUNICATION': Track,
+                'CRAFT': Track,
+                  'INITIATIVE': Track,
+                    'CAREER_DEVELOPMENT': Track,
+                      'ORG_DESIGN': Track,
+                        'WELLBEING': Track,
+                          'ACCOMPLISHMENT': Track,
+                            'MENTORSHIP': Track,
+                              'PROMOTING_RECRUITING': Track,
+                                'COMMUNITY': Track
+                                  |}
 
 export const tracks: Tracks = {
   "DEV_INFRASTRUCTURE": {
@@ -97,25 +97,25 @@ export const tracks: Tracks = {
     "milestones": [{
       "summary": "Works effectively within established methodolgies using the available infrastructure",
       "signals": [
-        "Writes thorough postmortems for service outages",
         "Uses proper development methodologies as part of the development process",
         "Properly implements work flow instructions (such as proper workitem editing)",
+        "Familiar with the organization standars, and applies them correctly",
       ],
       "examples": [
         "Made safe and effective configuration changes",
-        "Resolves simple git, TFS and pipeline erros idependently",
-        "Familiar with the organization standars, and applies them correctly",
+        "Resolved simple git, TFS and pipeline erros idependently",
+        "Wrote thorough postmortems for service outage",
       ],
     }, {
       "summary": "Develops new features based on existing services, or minor improvements to existing platforms",
       "signals": [
         "Creates new service pipelines based on existing ones",
-        "Solves complex Jenkins and TFS pipeline issues",
+        "Solves complex build issues",
+        "Has the ability to classify issues, and look up solutions idependently",
       ],
       "examples": [
-        "Solves complex build issues",
-        "Improved the build script",
-        "Has the ability to classify issues, and look up solutions idependently",
+        "Solves complex Jenkins and TFS pipeline issues",
+        "Improved Engine's build script",
       ],
     }, {
       "summary": "Designs major new features and demonstrates a nuanced understanding of devops processes",
@@ -126,6 +126,7 @@ export const tracks: Tracks = {
       ],
       "examples": [
         "Writes major new scripts or tools to support the development process",
+        "Wrote the pipeline to deploy to the primary test site"
       ],
     }, {
       "summary": "Builds complex, reusable services that pioneer best practices and enable engineers to work more effectively",
@@ -135,8 +136,8 @@ export const tracks: Tracks = {
         "Makes appropriate buy vs build choices",
       ],
       "examples": [
-        "Writes a detailed review, considering standards, efficiency and simplicity",
-        "Promotes significant new processes and tools to make dev better",
+        "Wrote a detailed review on AWS infrastructure, considering standards, efficiency and simplicity",
+        "Promoted the use of SonarQube to make dev better",
         "Able to point to future issues that might arise from selected architectural decisions and suggest modifications",
       ],
     }, {
@@ -228,7 +229,7 @@ export const tracks: Tracks = {
         "Resolved out of disk errors independently",
       ],
       "examples": [
-        
+
       ],
     }, {
       "summary": "Develops new instances of existing architecture, or minor improvements to existing architecture",
@@ -238,7 +239,7 @@ export const tracks: Tracks = {
         "Triages service issues correctly and independently",
       ],
       "examples": [
-        
+
       ],
     }, {
       "summary": "Designs standalone systems of moderate complexity, or major new features in existing systems",
@@ -1137,20 +1138,20 @@ export const categoryColorScale = d3.scaleOrdinal()
   .range(['#fcba03', '#000080', '#6698FF', '#7D0552'])
 
 export const titles = [
-  {label: 'Engineer I', minPoints: 0, maxPoints: 16},
-  {label: 'Engineer II', minPoints: 17, maxPoints: 35},
-  {label: 'Senior Engineer', minPoints: 36, maxPoints: 57},
-  {label: 'Group Lead', minPoints: 36, maxPoints: 57},
-  {label: 'Staff Engineer', minPoints: 58, maxPoints: 89},
-  {label: 'Senior Group Lead', minPoints: 58, maxPoints: 89},
-  {label: 'Principal Engineer', minPoints: 90},
-  {label: 'Director of Engineering', minPoints: 90}
+  { label: 'Engineer I', minPoints: 0, maxPoints: 16 },
+  { label: 'Engineer II', minPoints: 17, maxPoints: 35 },
+  { label: 'Senior Engineer', minPoints: 36, maxPoints: 57 },
+  { label: 'Group Lead', minPoints: 36, maxPoints: 57 },
+  { label: 'Staff Engineer', minPoints: 58, maxPoints: 89 },
+  { label: 'Senior Group Lead', minPoints: 58, maxPoints: 89 },
+  { label: 'Principal Engineer', minPoints: 90 },
+  { label: 'Director of Engineering', minPoints: 90 }
 ]
 
 export const eligibleTitles = (milestoneMap: MilestoneMap): string[] => {
   const totalPoints = totalPointsFromMilestoneMap(milestoneMap)
 
   return titles.filter(title => (title.minPoints === undefined || totalPoints >= title.minPoints)
-                             && (title.maxPoints === undefined || totalPoints <= title.maxPoints))
+    && (title.maxPoints === undefined || totalPoints <= title.maxPoints))
     .map(title => title.label)
 }

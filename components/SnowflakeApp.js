@@ -55,6 +55,7 @@ const emptyState = (): SnowflakeAppState => {
       'FOUNDATIONS': 0,
       'SERVERS': 0,
       'LEGACY': 2,
+      'TESTING': 1,
       'PROJECT_MANAGEMENT': 0,
       'COMMUNICATION': 0,
       'CRAFT': 0,
@@ -81,6 +82,7 @@ const defaultState = (): SnowflakeAppState => {
       'FOUNDATIONS': 3,
       'SERVERS': 2,
       'LEGACY': 1,
+      'TESTING': 1,
       'PROJECT_MANAGEMENT': 4,
       'COMMUNICATION': 1,
       'CRAFT': 1,
@@ -176,8 +178,8 @@ class SnowflakeApp extends React.Component<Props, SnowflakeAppState> {
                   currentTitle={this.state.title}
                   setTitleFn={(title) => this.setTitle(title)} />
             </form>
-            <PointSummaries milestoneByTrack={this.state.milestoneByTrack} />
-            <LevelThermometer milestoneByTrack={this.state.milestoneByTrack} />
+            {/* <PointSummaries milestoneByTrack={this.state.milestoneByTrack} />
+            <LevelThermometer milestoneByTrack={this.state.milestoneByTrack} /> */}
           </div>
           <div style={{flex: 0}}>
             <NightingaleChart

@@ -1,7 +1,7 @@
 // @flow
 import * as d3 from 'd3'
 
-export type TrackId = 'DEV_INFRASTRUCTURE' | 'WEB_CLIENT' | 'FOUNDATIONS' | 'SERVERS' | 'LEGACY' |
+export type TrackId = 'DEV_INFRASTRUCTURE' | 'WEB_CLIENT' | 'FOUNDATIONS' | 'SERVERS' | 'LEGACY' | 'TESTING'
   'PROJECT_MANAGEMENT' | 'COMMUNICATION' | 'CRAFT' | 'INITIATIVE' |
   'CAREER_DEVELOPMENT' | 'ORG_DESIGN' | 'WELLBEING' | 'ACCOMPLISHMENT' |
   'MENTORSHIP' | 'PROMOTING_RECRUITING' | 'COMMUNITY'
@@ -13,6 +13,7 @@ export type MilestoneMap = {
   'FOUNDATIONS': Milestone,
   'SERVERS': Milestone,
   'LEGACY': Milestone,
+  'TESTING': Milestone,
   'PROJECT_MANAGEMENT': Milestone,
   'COMMUNICATION': Milestone,
   'CRAFT': Milestone,
@@ -76,6 +77,7 @@ type Tracks = {|
       'FOUNDATIONS': Track,
         'SERVERS': Track,
           'LEGACY': Track,
+          'TESTING': Track,
             'PROJECT_MANAGEMENT': Track,
               'COMMUNICATION': Track,
                 'CRAFT': Track,
@@ -342,7 +344,7 @@ export const tracks: Tracks = {
     }],
   },
 
-  "Legacy": {
+  "LEGACY": {
     "displayName": "Legacy",
     "category": "A",
     "description": "Has good knowledge of legacy systems, knows how to investigae and fix small bugs, and add new features",
@@ -399,6 +401,68 @@ export const tracks: Tracks = {
       "examples": [
         "Modified system image to new HW",
         "Developed new Bodel",
+      ],
+    }],
+  },
+
+  "TESTING": {
+    "displayName": "Testing",
+    "category": "A",
+    "description": "Develops expertise in the use and fundamentals of software testing (Automated and manual) and Quality assurance practices as a whole",
+    "milestones": [{
+      "summary": "Works effectively within established structures, following current best practices",
+      "signals": [
+        "Runs exhaustive manual test suite and produced a meaningful test results report ",
+        "Writes tests for simple new feature and\or bug fix",
+        "Setup a test station connected to 'Mecholel Zira' for system test",
+      ],
+      "examples": [
+        "Ran Comms channel test suit and reported on 5 bugs with adequote details with connection to the correct Requirements",
+        "Amended existing test for new category in the Add Target form",
+        "Records and explains in details the test implementation and bugs found during the test",
+      ],
+    }, {
+      "summary": "Develops advanced test suites based on current best practices",
+      "signals": [
+        "Writes tests for complex new features and\or bug fix",
+        "Recognizes vulnarable uncovered areas and wrote tests to cover them",
+        "Wrote E2E Tests for complex new features"
+      ],
+      "examples": [
+        "Wrote a complete test suite for the engagement process",
+        "Configured WL and connected to 5.6\\7.0 setup",
+        "Runs complete sanity Shore test suite, and clearly documents the found bugs",
+      ],
+    }, {
+      "summary": "Design major new practices and methods for software testing and qulity assurance",
+      "signals": [
+        "Implements a new infrastructure to test new or never before tested technology",
+        "Reviews the tests written according to QA and software best practices",
+        "Designs new tests suites for complex new system features"
+      ],
+      "examples": [
+        "Impelemented testing abilities to test MashovJS",
+        "Adds significant new tooling to improve code quality in the organization (I.E Linter)",
+        "Wrote the perlimenry design of Enigma test suite",
+      ],
+    }, {
+      "summary": "Builds/Implements complex major new testing architecture and methods",
+      "signals": [
+        "Designed and wrote a brand new infrastructure to test industry level hard to test features",
+      ],
+      "examples": [
+        "Wrote a new infrastructure for E2E map testing",
+        "Designed the complete real world test suite of Air Algorithms",
+        "Pushed for making testing and automated testing a part of DOD",
+      ],
+    }, {
+      "summary": "Is an industry-leading expert in automated testing and quality assurence or sets strategic foundational direction for an quality assurance and eng. team",
+      "signals": [
+        "Invents industry-leading techniques to solve complex problems in testing",
+        "Researched, customized and implemented new QA methodologies in the organization level"
+      ],
+      "examples": [
+        "Designed and wrote MBR software and methodology",
       ],
     }],
   },
